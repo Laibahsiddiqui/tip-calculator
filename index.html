@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A live tip calculator and bill splitter." />
+  <title>Tip Calculator & Bill Splitter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Frontend Assessment</p>
+      <h1 id="page-title">Tip Calculator & Bill Splitter</h1>
+      <p class="intro-text">
+        Enter your bill, choose a tip, and split the total live with your group.
+      </p>
+    </section>
+
+    <form class="calculator-card" id="tipForm" novalidate>
+      <section class="input-panel" aria-label="Calculator inputs">
+        <div class="field-group">
+          <label for="billAmount">Bill amount <span class="currency-label">(Rs)</span></label>
+          <div class="input-wrapper">
+            <span aria-hidden="true">Rs</span>
+            <input
+              id="billAmount"
+              name="billAmount"
+              type="text"
+              inputmode="decimal"
+              autocomplete="off"
+              placeholder="0.00"
+              aria-describedby="billError"
+            />
+          </div>
+          <p class="error-message" id="billError" aria-live="polite"></p>
+        </div>
+
+        <fieldset class="field-group">
+          <legend>Tip percentage</legend>
+
+          <div class="tip-grid" role="group" aria-label="Preset tip percentages">
+            <button type="button" class="tip-button" data-tip="10">10%</button>
+            <button type="button" class="tip-button" data-tip="15">15%</button>
+            <button type="button" class="tip-button" data-tip="20">20%</button>
+          </div>
+
+          <label class="custom-tip-label" for="customTip">Custom tip percentage</label>
+          <div class="input-wrapper">
+            <input
+              id="customTip"
+              name="customTip"
+              type="text"
+              inputmode="decimal"
+              autocomplete="off"
+              placeholder="Custom"
+              aria-describedby="tipError"
+            />
+            <span aria-hidden="true">%</span>
+          </div>
+          <p class="error-message" id="tipError" aria-live="polite"></p>
+        </fieldset>
+
+        <div class="field-group">
+          <label for="peopleCount">Number of people</label>
+          <div class="input-wrapper">
+            <span aria-hidden="true">👥</span>
+            <input
+              id="peopleCount"
+              name="peopleCount"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="1"
+              aria-describedby="peopleError"
+            />
+          </div>
+          <p class="error-message" id="peopleError" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="output-panel" aria-label="Calculation results">
+        <div>
+          <p class="panel-kicker">Live result</p>
+          <h2>Your split</h2>
+        </div>
+
+        <dl class="result-list">
+          <div class="result-row">
+            <dt>Total tip</dt>
+            <dd id="tipAmount">Rs 0.00</dd>
+          </div>
+          <div class="result-row">
+            <dt>Grand total</dt>
+            <dd id="grandTotal">Rs 0.00</dd>
+          </div>
+          <div class="result-row highlight">
+            <dt>Per person</dt>
+            <dd id="perPerson">Rs 0.00</dd>
+          </div>
+        </dl>
+
+        <p class="helper-text" id="resultHint" aria-live="polite">
+          Results update automatically as you type.
+        </p>
+
+        <button type="reset" class="reset-button">Reset</button>
+      </section>
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
