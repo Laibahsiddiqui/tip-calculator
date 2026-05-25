@@ -1,5 +1,9 @@
 # Tip Calculator & Bill Splitter
 
+## Project Overview
+
+This is a Tip Calculator app built using HTML, CSS, and JavaScript. It allows users to enter a bill amount, select a tip percentage, and calculate the final amount.
+
 A single-screen frontend assessment project built with vanilla HTML, CSS, and JavaScript.
 
 The app lets users enter:
