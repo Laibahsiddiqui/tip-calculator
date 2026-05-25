@@ -1,5 +1,9 @@
 # ANSWERS.md
 
+## Stack & Design Choices
+
+I used HTML, CSS, and JavaScript because they are simple, lightweight, and suitable for a small frontend project like a tip calculator.
+
 ## 1. How to run
 
 No dependencies are required because this project uses vanilla HTML, CSS, and JavaScript.
