@@ -15,6 +15,11 @@ const errors = {
   people: document.querySelector("#peopleError"),
 };
 
+if (!billAmount || billAmount <= 0) {
+  alert("Please enter a valid bill amount");
+  return;
+};
+
 const wrappers = {
   bill: billInput.closest(".input-wrapper"),
   tip: customTipInput.closest(".input-wrapper"),
